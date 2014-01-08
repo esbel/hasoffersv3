@@ -17,6 +17,22 @@ describe HasOffersV3::Conversion do
     end
   end
 
+  describe '.find_added_conversions' do
+    it 'should make a proper request call' do
+      response = subject.find_added_conversions
+      a_request(:get, url).with(query: hash_including({'Method' => 'findAddedConversions'})).should have_been_made
+      validate_call response
+    end
+  end
+
+  describe '.find_updated_conversions' do
+    it 'should make a proper request call' do
+      response = subject.find_updated_conversions
+      a_request(:get, url).with(query: hash_including({'Method' => 'findUpdatedConversions'})).should have_been_made
+      validate_call response
+    end
+  end
+
   describe '.findAll' do
     it 'should make a proper request call' do
       response = subject.findAll
