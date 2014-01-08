@@ -6,8 +6,8 @@ module HasOffersV3
         get_request 'getDownloadLink', params
       end
 
-      def get_log_expirations(params = {})
-        get_request 'getLogExpirations', params
+      def get_log_expirations
+        get_request 'getLogExpirations'
       end
 
       def list_date_dirs(params = {})
