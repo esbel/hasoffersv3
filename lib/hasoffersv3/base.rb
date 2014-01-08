@@ -4,7 +4,7 @@ require 'active_support/core_ext/object/to_query'
 module HasOffersV3
   class Base
     class << self
-      def get_request(method, params, &block)
+      def get_request(method, params = {}, &block)
         if block.nil?
           make_request(:get, method, params)
         else
@@ -17,7 +17,7 @@ module HasOffersV3
         end
       end
 
-      def post_request(method, params, &block)
+      def post_request(method, params = {}, &block)
         if block.nil?
           make_request(:post, method, params)
         else
