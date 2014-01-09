@@ -52,6 +52,7 @@ module HasOffersV3
 
       def new_http(uri)
         http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl      = true if uri.scheme == 'https'
         http.read_timeout = 600
         http
       end
