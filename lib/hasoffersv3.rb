@@ -1,3 +1,5 @@
+require 'net/http'
+
 %w!base affiliate response conversion raw_log report configuration advertiser advertiser_user offer!.each do |file|
   require "hasoffersv3/#{file}"
 end
