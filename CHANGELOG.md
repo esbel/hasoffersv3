@@ -1,3 +1,6 @@
+# 0.1.1
+- Support "Offer/getApprovedAffiliateIds" method
+
 # 0.1.0
 
 - [#14] added `.find_added_conversions` and `find_updated_conversions` calls
