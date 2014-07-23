@@ -24,6 +24,11 @@ module HasOffersV3
         requires! params, [:id]
         post_request 'getGroups', params
       end
+
+      def get_approved_affiliate_ids(params = {})
+        requires! params, [:id]
+        post_request 'getApprovedAffiliateIds', params
+      end
     end
   end
 end

@@ -73,4 +73,19 @@ describe HasOffersV3::Offer do
       end
     end
   end
+
+  describe '.get_approved_affiliate_ids' do
+    it 'makes a proper API request' do
+      stub_call
+      response = HasOffersV3::Offer.get_approved_affiliate_ids id: 1
+      a_request(:post, url).with(body: hash_including({'Method' => 'getApprovedAffiliateIds'})).should have_been_made
+      validate_call response
+    end
+
+    context 'when id parameter is missed' do
+      it 'raises an exception' do
+        expect {  HasOffersV3::Offer.get_approved_affiliate_ids }.to raise_error ArgumentError
+      end
+    end
+  end
 end
