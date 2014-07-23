@@ -5,7 +5,9 @@ describe HasOffersV3::Affiliate do
 
   let(:url)  { api_url 'Affiliate' }
 
-  before(:each) { stub_call unless example.metadata[:no_stub] }
+  before(:each) do |example|
+    stub_call unless example.metadata[:no_stub]
+  end
 
   describe '.find_all' do
     it 'should make a proper request call' do
