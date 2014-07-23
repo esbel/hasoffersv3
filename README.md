@@ -1,6 +1,6 @@
 ### Overview 
 
-[![Build status](https://api.travis-ci.org/HitFox/hasoffersv3.png?branch=master)](http://travis-ci.org/HitFox/hasoffersv3) 
+[![Build status](https://api.travis-ci.org/applift/hasoffersv3.png?branch=master)](http://travis-ci.org/HitFox/hasoffersv3)
 
 ### Synopsis
 
