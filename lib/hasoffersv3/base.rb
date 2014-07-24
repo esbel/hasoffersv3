@@ -86,7 +86,10 @@ module HasOffersV3
 
       def build_request_params(method, params)
         params['Method'] = method
-        params.merge NetworkId: HasOffersV3.configuration.network_id, NetworkToken: HasOffersV3.configuration.api_key
+        {
+          NetworkId:    HasOffersV3.configuration.network_id,
+          NetworkToken: HasOffersV3.configuration.api_key,
+        }.merge(params)
       end
     end
   end
