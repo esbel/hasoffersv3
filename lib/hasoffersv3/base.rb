@@ -75,13 +75,26 @@ module HasOffersV3
           http              = new_http(uri)
           raw_request       = Net::HTTP::Get.new(uri.request_uri)
         end
-        http_response = execute_request(http, raw_request)
+
+        http_response = rate_limited do
+          execute_request(http, raw_request)
+        end
 
         Response.new(http_response)
       end
 
       def execute_request(net_http, raw_request)
         net_http.request raw_request
+      end
+
+      def rate_limited(&block)
+        if rate_limit = HasOffersV3.configuration.rate_limit
+          if @last_request_at
+            sleep [1/rate_limit.to_f - (Time.now - @last_request_at), 0].max
+          end
+          @last_request_at = Time.now
+        end
+        yield
       end
 
       def build_request_params(method, params)

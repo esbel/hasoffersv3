@@ -1,4 +1,4 @@
-### Overview 
+### Overview
 
 [![Build status](https://api.travis-ci.org/applift/hasoffersv3.png?branch=master)](http://travis-ci.org/HitFox/hasoffersv3)
 
@@ -33,6 +33,18 @@ Examples:
 
 ```ruby
 HasOffersV3::Affiliate.update_payment_method_wire affiliate_id: '877', data: []
+```
+
+## Rate Limiting
+
+HasOffers enforces certain limits on the maximum number of requests per time interval.
+
+You can make sure these limits are not exceeded by specifying the rate limit in the configuration:
+
+```ruby
+HasOffersV3.configure do |config|
+  config.rate_limit = 40.0/10.0 # 40 requests per 10 second window
+end
 ```
 
 ## Testing

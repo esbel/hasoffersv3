@@ -1,6 +1,6 @@
 module HasOffersV3
   class Configuration
-    attr_accessor :network_id, :api_key, :protocol, :host, :base_path
+    attr_accessor :network_id, :api_key, :protocol, :host, :base_path, :rate_limit
 
     def initialize
       @protocol   = 'http'
