@@ -29,6 +29,11 @@ module HasOffersV3
         requires! params, [:id]
         post_request 'getApprovedAffiliateIds', params
       end
+
+      def set_payout(params = {})
+        requires! params, [:id, :affiliate_id]
+        post_request 'setPayout', params
+      end
     end
   end
 end
