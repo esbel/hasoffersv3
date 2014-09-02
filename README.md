@@ -12,6 +12,8 @@ Supported ruby versions:
 
 *   1.9.3
 *   2.0
+*   2.1
+*   2.2
 
 ## Installation
 

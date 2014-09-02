@@ -1,4 +1,4 @@
-module HasOffersV3
+class HasOffersV3
   class RawLog < Base
     class << self
       def get_download_link(params = {})

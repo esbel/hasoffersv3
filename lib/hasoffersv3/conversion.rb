@@ -1,4 +1,4 @@
-module HasOffersV3
+class HasOffersV3
   class Conversion < Base
     class << self
       def findAll(params = {})

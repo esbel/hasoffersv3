@@ -1,3 +1,3 @@
-module HasOffersV3
+class HasOffersV3
   VERSION = '0.1.3'
 end

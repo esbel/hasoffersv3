@@ -1,4 +1,4 @@
-module HasOffersV3
+class HasOffersV3
   class Offer < Base
     class << self
       def find_all(params = {})

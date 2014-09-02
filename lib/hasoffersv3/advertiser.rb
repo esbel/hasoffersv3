@@ -1,4 +1,4 @@
-module HasOffersV3
+class HasOffersV3
   class Advertiser < Base
     class << self
       def find_all_ids
