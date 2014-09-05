@@ -1,4 +1,4 @@
-module HasOffersV3
+class HasOffersV3
   class Testing
     class << self
       attr_accessor :__test_mode, :__prepared_request
@@ -20,11 +20,12 @@ module HasOffersV3
       end
 
       def stub_request(status = 200, body = '{"response":{"status":1,"data":[]}}', message = 'mock')
-        self.__prepared_request = begin
-                                    response = Net::HTTPResponse.new '1.1', status, message
-                                    response.stub(:body) { body }
-                                    response
-                                  end
+        self.__prepared_request =
+          begin
+            response = Net::HTTPResponse.new '1.1', status, message
+            response.stub(:body) { body }
+            response
+          end
       end
 
       def execute_stubbed_request
@@ -35,18 +36,14 @@ module HasOffersV3
     end
   end
 
-  class Base
-    class << self
-      private
+  class Client
+    alias_method :original_execute_request, :execute_request
 
-      alias_method :original_execute_request, :execute_request
-
-      def execute_request(net_http, raw_request)
-        if HasOffersV3::Testing.enabled?
-          HasOffersV3::Testing.execute_stubbed_request
-        else
-          original_execute_request net_http, raw_request
-        end
+    def execute_request(net_http, raw_request)
+      if HasOffersV3::Testing.enabled?
+        HasOffersV3::Testing.execute_stubbed_request
+      else
+        original_execute_request net_http, raw_request
       end
     end
   end

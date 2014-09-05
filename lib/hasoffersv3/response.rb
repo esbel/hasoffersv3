@@ -1,6 +1,6 @@
 require 'oj'
 
-module HasOffersV3
+class HasOffersV3
   class Response
     attr_reader :body, :http_status_code, :http_message, :http_headers
 
