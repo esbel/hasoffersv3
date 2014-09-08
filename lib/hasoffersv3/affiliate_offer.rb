@@ -24,5 +24,10 @@ class HasOffersV3
       post_request 'getTargetCountries', params
     end
 
+    def self.generate_tracking_link(params = {})
+      requires! params, [:offer_id]
+      post_request 'generateTrackingLink', params
+    end
+
   end
 end
