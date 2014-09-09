@@ -74,4 +74,21 @@ describe HasOffersV3::AffiliateOffer do
     end
   end
 
+  describe '.generate_tracking_link' do
+    it 'should make a proper request call' do
+      stub_call
+      response = subject.generate_tracking_link offer_id: 1
+      request = a_request(:post, url).with(body: hash_including('Method' => 'generateTrackingLink'))
+      expect(request).to have_been_made
+
+      validate_call response
+    end
+
+    context 'when there is no offer_id' do
+      it 'should raise exception' do
+        expect { subject.generate_tracking_link }.to raise_error ArgumentError
+      end
+    end
+  end
+
 end
