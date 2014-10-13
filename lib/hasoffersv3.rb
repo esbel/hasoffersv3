@@ -1,5 +1,5 @@
 require 'net/http'
-
+require 'multi_json'
 require 'hasoffersv3/client'
 
 %w!base affiliate response conversion raw_log report configuration advertiser advertiser_user offer!.each do |file|

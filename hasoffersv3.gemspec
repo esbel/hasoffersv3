@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
-  s.add_dependency 'oj' # for faster JSON parsing
+  s.add_dependency 'multi_json' # for faster JSON parsing
   s.add_dependency 'activesupport' # for to_param method
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'rspec',   '~> 3.0.0'
-  s.add_development_dependency "bundler", "~> 1.3"
-  s.add_development_dependency "rake"
+  s.add_development_dependency 'bundler', '~> 1.3'
+  s.add_development_dependency 'rake'
 end
