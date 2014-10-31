@@ -103,4 +103,19 @@ describe HasOffersV3::Offer do
       end
     end
   end
+
+  describe '.remove_payout' do
+    it 'should make a proper request call' do
+      stub_call
+      response = HasOffersV3::Offer.remove_payout id: 1, affiliate_id: 321
+      a_request(:post, url).with(body: hash_including({'Method' => 'removePayout'})).should have_been_made
+      validate_call response
+    end
+
+    context 'when the id and/or affiliate id parameters are missing' do
+      it 'raises an exception' do
+        expect {  HasOffersV3::Offer.remove_payout }.to raise_error ArgumentError
+      end
+    end
+  end
 end
