@@ -34,6 +34,11 @@ class HasOffersV3
         requires! params, [:id, :affiliate_id]
         post_request 'setPayout', params
       end
+
+      def remove_payout(params = {})
+        requires! params, [:id, :affiliate_id]
+        post_request 'removePayout', params
+      end
     end
   end
 end
