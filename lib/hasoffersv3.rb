@@ -7,6 +7,7 @@ require 'hasoffersv3/client'
 end
 
 require 'hasoffersv3/affiliate_offer'
+require 'hasoffersv3/affiliate_billing'
 require 'hasoffersv3/adapter'
 
 class HasOffersV3
@@ -16,6 +17,7 @@ class HasOffersV3
     advertiser_users: HasOffersV3::AdvertiserUser,
     affiliates: HasOffersV3::Affiliate,
     affiliate_offers: HasOffersV3::AffiliateOffer,
+    affiliate_billing: HasOffersV3::AffiliateBilling,
     conversions: HasOffersV3::Conversion,
     offers: HasOffersV3::Offer,
     raw_logs: HasOffersV3::RawLog,
