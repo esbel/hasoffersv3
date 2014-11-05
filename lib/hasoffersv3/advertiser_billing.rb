@@ -1,9 +1,8 @@
 class HasOffersV3
-  class AffiliateBilling < Base
+  class AdvertiserBilling < Base
     class << self
-      def find_last_invoice(params = {})
-        requires! params, [:affiliate_id]
-        post_request 'findLastInvoice', params
+      def find_all_invoices(params = {})
+        post_request 'findAllInvoices', params
       end
 
       def create_invoice(params = {})
