@@ -53,6 +53,7 @@ class HasOffersV3
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true if uri.scheme == 'https'
       http.read_timeout = 600
+      http.proxy_address if configuration.proxy_url
       http
     end
 

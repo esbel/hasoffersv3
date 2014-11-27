@@ -6,7 +6,8 @@ class HasOffersV3
       protocol: 'http',
       base_path: '/v3',
       network_id: '',
-      api_key: ''
+      api_key: '',
+      proxy_url: ''
     }
 
     DEFAULTS.keys.each do |option_name|
